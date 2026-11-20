@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KOFFE – Digital Menu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Caveat:wght@500;600&family=Montserrat:wght@400;600&display=swap">
+<style>
+:root{color-scheme:light;--bg:#fbf0dc;--card:#fdf4e2;--ink:#1d2b27;--mut:#5f625a;--sp:#e8d6ee;--spb:#d2b8dc;--acc:#0f4a41;--pur:#7a4a8c;--line:#e8d9b6;--star:#e0a526;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-weight:500}
+.w{max-width:760px;margin:0 auto;padding:0 16px 32px}
+header{text-align:center;padding:28px 0 6px}
+.leaf{display:block;margin:0 auto -4px}
+.logo{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:88px;letter-spacing:1px;color:var(--acc);margin:0;line-height:.95}
+.cat .logo{font-size:52px}.cat .leaf{width:40px;height:22px}
+.tag{font-family:Montserrat,system-ui,sans-serif;letter-spacing:4px;font-size:12px;color:var(--mut);margin:10px 0}
+.script{font-family:Caveat,'Segoe Script',cursive;font-size:30px;color:var(--acc);margin:10px 0;text-align:center}
+.hl{text-align:center;font:600 13px Montserrat,system-ui,sans-serif;letter-spacing:3px;color:var(--acc);margin:22px 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;min-height:150px;padding:16px 10px;background:var(--card);border:1.5px solid var(--line);border-radius:18px;text-decoration:none;color:var(--ink);box-shadow:0 2px 8px rgba(15,74,65,.08);transition:transform .15s,border-color .15s}
+.tile:hover,.tile:active{transform:translateY(-3px);border-color:var(--acc)}
+.tile b{font-size:54px;font-weight:400;line-height:1}
+.tile strong{font-size:23px;font-weight:700;color:var(--acc);line-height:1.1}
+.tile span{font-style:italic;font-size:15px;color:var(--mut)}
+.tile.wide{grid-column:1/-1;min-height:110px;background:var(--sp);border-color:var(--spb)}
+.come{text-align:center;font:400 12px Montserrat,system-ui,sans-serif;letter-spacing:2px;color:var(--mut);margin:22px 0 6px}
+.back{display:inline-block;margin:14px 0 4px;padding:9px 16px;border-radius:24px;background:var(--card);border:1px solid var(--line);color:var(--acc);text-decoration:none;font:600 13px Montserrat,system-ui,sans-serif}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 16px;margin:12px 0}
+h2{margin:0;text-align:center;font-size:30px;font-weight:700;letter-spacing:1px;color:var(--acc);text-transform:uppercase}
+.sub{text-align:center;font-style:italic;font-size:18px;color:var(--mut);margin:2px 0 14px}
+.sp{background:var(--sp);border:1px solid var(--spb);border-radius:12px;padding:12px;margin:10px 0;display:flex;gap:12px;align-items:center}
+.ic{font-size:36px}.sp .b{flex:1}
+.badge{display:inline-block;background:var(--pur);color:#fff;font:700 9px/1 system-ui,sans-serif;letter-spacing:1px;padding:4px 7px;border-radius:4px}
+.n{font-size:19px;margin:4px 0 2px;font-weight:600}.d{font-size:14px;color:var(--mut)}
+.p{font-size:22px;font-weight:600;white-space:nowrap}
+.r{font:11px system-ui,sans-serif;color:var(--mut);margin-top:3px}.r i{color:var(--star);font-style:normal}
+.it{display:flex;justify-content:space-between;align-items:center;padding:11px 4px;border-bottom:1px dashed var(--line)}
+.it:last-child{border:0}.it .n{margin:0}.it .e{text-align:right}
+.combo{display:flex;gap:12px;align-items:center;padding:12px 4px;border-bottom:1px dashed var(--line)}
+.combo:last-of-type{border:0}.combo .n{margin:0}
+.pill{background:var(--sp);border:1px solid var(--spb);border-radius:20px;padding:4px 14px;font-size:20px;font-weight:600}
+.most{font:700 10px system-ui,sans-serif;background:var(--acc);color:#fff;padding:3px 8px;border-radius:4px;margin-left:6px;vertical-align:middle}
+.cta{display:flex;flex-direction:column;gap:10px;margin:22px 0}
+.cta a{display:block;text-decoration:none;background:var(--acc);color:#fff;border-radius:12px;padding:14px 16px;font:600 14px system-ui,sans-serif}
+.cta a small{display:block;font-weight:400;opacity:.85;margin-top:2px}
+footer{text-align:center;color:var(--mut);font-size:13px;letter-spacing:2px}
+footer b{color:var(--acc);font-size:20px;display:block;letter-spacing:3px}
+@media(min-width:600px){.tile{min-height:180px}.tile b{font-size:64px}}
+</style></head><body><div class="w" id="app">
+<header id="hd"></header><main id="m"></main>
+<div class="cta">
+<a href="#whatsapp">💬 WHATSAPP CHAT<small>Let’s chat!</small></a>
+<a href="#book">📅 BOOK A TABLE<small>Reserve your spot</small></a>
+<a href="#maps">📍 FIND US ON GOOGLE MAPS<small>Visit us</small></a></div>
+<footer><b>KOFFE</b>Bhubaneswar</footer></div>
+<script>
+const S=[
+["chai-club","The Chai Club","A sip of happiness","🍵",[
+["Morning Kadak Chai",35,4.6,"1.2k"],["Afternoon Halki Chai",32,4.5,"980"],
+["Evening Adrak Chai",45,4.9,"2.4k","Our signature ginger-infused chai."],
+["Elaichi Chai",40,4.7,"1.1k"],["Lemon Chai",38,4.5,"950"],["Red Chai",40,4.6,"870"]]],
+["coffee-house","The Coffee House","Brewed for your mood","☕",[
+["Velvet Cold Coffee",139,4.9,"3.1k","Our most loved cold brew."],
+["Classic Hot Coffee",79,4.6,"1.4k"],["Cappuccino",99,4.7,"1.8k"]]],
+["sandwich-studio","The Sandwich Studio","Grilled, cheesy and loaded","🥪",[
+["Smoky Paneer Tikka Melt",179,4.8,"2.7k","A perfect blend of spice & cheese."],
+["Buttery Classic Cheese",89,4.6,"1.1k"],["Loaded Cheesy Corn",129,4.7,"1.9k"],["Triple-Layer Veggie Crunch",159,4.8,"2.1k"]]],
+["crunch-corner","The Crunch Corner","Crispy little cravings","🍟",[
+["Loaded Cheesy Potato Pops",139,4.9,"2.3k","A cheesy delight in every bite."],
+["Golden Crispy Fries",89,4.5,"1.6k"],["Fiery Peri Peri Fries",119,4.6,"1.5k"],["Garlic Butter Bread",99,4.5,"1.3k"]]],
+["italian-affair","The Italian Affair","Comfort in every bite","🍝",[
+["Creamy Alfredo Pasta",219,4.9,"2.8k","Rich, creamy and irresistible."],
+["Smoky Roasted Red Pasta",179,4.6,"1.5k"],["Cheesy Arrabbiata Pasta",199,4.7,"1.8k"]]],
+["protein-bar","The Protein Bar","Fuel your goals","🥤",[
+["Peanut Butter Protein Blast",229,4.9,"2.2k","A power-packed favourite."],
+["Double Chocolate Power Shake",179,4.7,"1.4k"],["Banana Nut Protein Shake",189,4.6,"1.3k"]]],
+["refreshment-lab","The Refreshment Lab","Coolers, fizz and freshness","🍹",[
+["Kokum Mint Cooler",99,4.7,"1.9k","A refreshing twist."],
+["Classic Mint Mojito",79,4.5,"1.2k"],["Strawberry Fizz",89,4.6,"1.5k"]]],
+["sweet-escape","The Sweet Escape","Save room for dessert","🍰",[
+["Baked Cheesecake Slice",249,4.8,"2.1k","Smooth, creamy, divine."],
+["Pudgy Chocolate Brownie",99,4.6,"1.4k"],["Mini Waffle & Ice Cream",149,4.7,"1.7k"]]]];
+const C=[["The Chai & Crunch Combo","Adrak Chai + Golden Fries",119,"☕🍟",1],["The Coffee Break Duo","Cold Coffee + Brownie",199,"☕🍫"],
+["The Sandwich Social","Cheesy Sandwich + Mojito",189,"🥪🍹"],["The Italian Escape","Pasta + Strawberry Fizz",279,"🍝🍓"],
+["The Power Pair","Protein Shake + Sandwich",239,"🥤🥪"],["The KOFFE Date","2 Coffees + Sandwich + Brownie",399,"☕🥪"]];
+const rt=(r,o)=>`<div class="r"><i>★</i> ${r} | ${o} orders</div>`;
+const leaf=`<svg class="leaf" width="64" height="36" viewBox="0 0 60 34" aria-hidden="true"><path d="M30 32C14 30 6 16 8 4c14 2 24 12 22 28z" fill="#2e6b5c"/><path d="M30 32c16-2 24-16 22-28-14 2-24 12-22 28z" fill="#0f4a41"/></svg>`;
+function head(){return `${leaf}<a href="#" style="text-decoration:none"><h1 class="logo">KOFFE</h1></a><div class="tag">— SIP. SNACK. STAY. —</div>`}
+function home(){
+let t=S.map(s=>`<a class="tile" href="#${s[0]}"><b>${s[3]}</b><strong>${s[1]}</strong><span>${s[2]}</span></a>`).join("");
+t+=`<a class="tile wide" href="#combo-club"><b>🎁</b><strong>The KOFFE Combo Club</strong><span>Good pairings. Better little deals.</span></a>`;
+return `<div class="script">Good Food. Good Mood. Good Company. ♡</div><div class="hl">OUR MENU HIGHLIGHTS</div><div class="grid">${t}</div><div class="come">— COME ON IN. STAY A WHILE. —</div>`}
+function cat(s){
+let h=`<a class="back" href="#">← BACK TO MENU</a><section><h2>${s[1]}</h2><div class="sub">${s[2]}</div>`;
+for(const i of s[4]){
+if(i[4]) h+=`<div class="sp"><div class="ic">${s[3]}</div><div class="b"><span class="badge">KOFFE SPECIAL</span><div class="n">${i[0]}</div><div class="d">${i[4]}</div>${rt(i[2],i[3])}</div><div class="p">₹${i[1]}</div></div>`;
+else h+=`<div class="it"><div class="n">${i[0]}</div><div class="e"><div class="p" style="font-size:18px">₹${i[1]}</div>${rt(i[2],i[3])}</div></div>`;}
+return h+`</section><a class="back" href="#">← BACK TO MENU</a>`}
+function combo(){
+let h=`<a class="back" href="#">← BACK TO MENU</a><section><h2>The KOFFE Combo Club</h2><div class="sub">Good pairings. Better little deals.</div>`;
+for(const c of C) h+=`<div class="combo"><div class="ic">${c[3]}</div><div style="flex:1"><div class="n">${c[0]}${c[4]?'<span class="most">MOST LOVED</span>':''}</div><div class="d">${c[1]}</div></div><div class="pill">₹${c[2]}</div></div>`;
+return h+`<div class="script">Share the joy of good food!</div></section><a class="back" href="#">← BACK TO MENU</a>`}
+function route(){
+const id=location.hash.slice(1),s=S.find(x=>x[0]===id);
+const isCat=!!s||id==="combo-club";
+document.getElementById("app").classList.toggle("cat",isCat);
+document.getElementById("hd").innerHTML=head();
+document.getElementById("m").innerHTML=s?cat(s):id==="combo-club"?combo():home();
+window.scrollTo(0,0)}
+addEventListener("hashchange",route);route();
+</script></body></html>
